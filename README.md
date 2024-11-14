@@ -33,8 +33,8 @@ helped you, AI tools you've used, and any other resources that are not solely yo
   - Tables in markdown are not easy, so we suggest saving your CRC card as an image and including the image(s) in the 
     README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - 
     and REPLACE it with your own:
-  
-![Don't leave me in your README!](image/crc.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
+
+https://github.com/Berea-College-CSC-226/p01-final-project-rylandc/blob/rylandc/CSC%20class%20card%20NIM.png
 
 ️**Branches**: This project will **require** effective use of git. 
 
