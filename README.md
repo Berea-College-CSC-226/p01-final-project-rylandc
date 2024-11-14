@@ -36,7 +36,7 @@ helped you, AI tools you've used, and any other resources that are not solely yo
 
 https://github.com/Berea-College-CSC-226/p01-final-project-rylandc/blob/rylandc/CSC%20class%20card%20NIM.png
 
-️**Branches**: This project will **require** effective use of git. 
+️**Branches**: This project will **require** effective use of git.
 
 Each partner should create a branch at the beginning of the project, and stay on this branch (or branches of their 
 branch) as they work. When you need to bring each others branches together, do so by merging each other's branches 
