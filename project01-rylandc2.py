@@ -21,20 +21,18 @@ class NIM:
         The initializer establishes variables used in all the methods.
 
         """
-        bells = 0 # number of bells in the basket currently
-        win = ""  # empty string right now, will later be set depending on who takes the last turn
-        take = 0  # a constantly changing variable that represents the number of bells being taken
+        self.bells = 0 # number of bells in the basket currently
+
+    def human_turn(self, bells):
+        pass
+
+    def comp_turn(self, bells):
+        pass
+
+    def run(self, visual): # handles everything related to the actual functioning of the game
         turn = 1  # manages the turns, odd = player turn, even = computer turn
+        win = ""  # empty string right now, will later be set depending on who takes the last turn
 
-    def human_turn(self):
-        pass
-
-    def comp_turn(self):
-        pass
-
-    def run(self): # handles everything related to the actual functioning of the game
-        pass
-        #print("The game has been run.")
 
 # Section 2: The GUI stuff.
 
@@ -78,7 +76,8 @@ def main():
     Creates an object of the NIM class and calls the method run().
 
     """
-    game = NIM()
-    game.run()
+    game = NIM()  # initialize the game object.
+    wn = Visual() # the screen used for the game
+    game.run(wn)  # run the game, passing in the Visual so it can be used.
 
 main()
