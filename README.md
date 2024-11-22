@@ -56,7 +56,8 @@ Reflect on what you’ve done so far. How’s it going? Are you feeling behind/a
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    **Replace this text with your reflection**
+    **I do feel behind (because I am), but I feel like I'm behind because I don't know how to solve an issue.
+    I think once I figure out the connection piece, it'll be easier for me to keep up.**
 ```
 
 ---
