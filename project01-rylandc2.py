@@ -104,13 +104,31 @@ class Visual:
         self.myTextBox1 = None
         self.myTextLabel1 = None
 
+    def wn_setup(self):
+        self.create_button1()
+        self.create_textbox1()
+        self.create_label1()
+
     def create_button1(self):
-        pass
+        self.myButton1 = tk.Button(self. root, text="Take bells", command=self.button1_handler)
+        self.myButton1.grid(row=0, column=0)
 
     def create_textbox1(self):
         pass
 
-    def create_label1(self):
+    def get_entry(self):
+        """
+        Retrieves the textbox entry, to be called in NIM.run().
+        Only works if it's a number between 1 and 4 inclusive.
+
+        :return: what the user entered in the textbox
+        """
+        text = self.myTextBox1.get()
+        if 1 <= text <= 4: # if the number entered is between 1 and 4 inclusive
+            return text
+
+    def create_label1(self, bells):
+        labeltext = str("There are " + str(bells) + " bells in the basket.")
         pass
 
     def button1_handler(self):
