@@ -7,19 +7,19 @@ def game(bells):
     :param bells: The number of bells in the basket.
     :return: x; how many turns have passed, used to calculate winner.
     """
-    x = 1
+    turn = 1
     print(type(bells))
     win = ""
     while bells > 0:
-        print("t. " + str(x))
-        print(type(x))
+        print("t. " + str(turn))
+        print(type(turn))
         print("There are " + str(bells) + " bells in the basket.")
-        if x % 2 == 1:
+        if turn % 2 == 1:
             bells = human_plays(bells)
         else:
             bells = comp_plays(bells)
-        x = x + 1
-    return x
+        turn = turn + 1
+    return turn
 
 
 def human_plays(bells):
@@ -65,8 +65,8 @@ def main():
     bells = 0
     while bells < 15:
         bells = int(input("How many bells do you put in the basket? "))
-    x = game(bells)
-    if x % 2 == 1:
+    turn = game(bells)
+    if turn % 2 == 1:
         win = "The computer "
     else:
         win = "You "

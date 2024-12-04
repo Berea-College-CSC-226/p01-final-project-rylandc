@@ -43,14 +43,14 @@ branch) as they work. When you need to bring each others branches together, do s
 into your own, following the process we've discussed in previous assignments: 
 
 ```
-    Branch 1 name: rylandc
-    Branch 2 name: N/A
+    Branch 1 name: rylandc (deleted)
+    Branch 2 name: rylandc2
 ```
 ---
 
 ## Milestone 2: Code Setup and Issue Queue
 
-Most importantly, keep your issue queue up to date, and focus on your code. 🙃
+Most importantly, keep your issue queue up to date, and focus on your code.
 
 Reflect on what you’ve done so far. How’s it going? Are you feeling behind/ahead? What are you worried about? 
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
@@ -66,14 +66,14 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 Indicate what percentage of the project you have left to complete and how confident you feel. 
 
-❗️**Completion Percentage**: `0 - 100%`
+️**Completion Percentage**: `50%`
 
 ❗️**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
   strategies you can employ to increase the likelihood that you'll be successful in completing this project 
   before the deadline.
 
 ```
-    **Replace this text with your reflection
+    **I am confident I can complete this project.**
 ```
 
 ---
@@ -82,12 +82,7 @@ Indicate what percentage of the project you have left to complete and how confid
 
 ### ❗User Instructions
 In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
-in PyCharm. 
-
-### ❗Errors and Constraints
-Every program has bugs or features that had to be scrapped for time. These bugs should be tracked in the issue queue. 
-You should already have a few items in here from the prior weeks. Create a new issue for any undocumented errors and 
-deficiencies that remain in your code. Bugs found that aren't acknowledged in the queue will be penalized.
+in PyCharm.
 
 ### ❗Reflection
 In three to four well-written paragraphs, address the following (at a minimum):
@@ -96,4 +91,3 @@ In three to four well-written paragraphs, address the following (at a minimum):
 - What did you learn from this process?
 - What was the hardest part of the final project?
 - What would you do differently next time, knowing what you know now?
-- (For partners) How well did you work with your partner? What made it go well? What made it challenging?
