@@ -46,13 +46,13 @@ def comp_plays(bells):
     :return: bells; the number of bells remaining in the basket.
     """
     five = 5 - (bells % 5)
-    print(type(bells))
+    #print(type(bells))
     take = 0
     if five == 5 or five == 0:
         take = int(random.randrange(1, 5))
     else:
         take = int(five)
-    print(type(take))
+    #print(type(take))
     bells = bells - take
     return bells
 

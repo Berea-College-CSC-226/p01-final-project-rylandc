@@ -11,8 +11,8 @@ class NIM:
         self.turn = 1  # manages the turns, odd = player turn, even = computer turn
         self.setup()
 
-    def human_turn(self):
-        pass
+    #def human_turn(self):
+    #    pass
 
     def comp_turn(self):
         five = 5 - (self.bells % 5)
