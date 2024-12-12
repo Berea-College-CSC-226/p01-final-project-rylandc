@@ -6,15 +6,22 @@ class NIM:
         The initializer establishes variables used in all the methods.
 
         """
-        self.bells = 0 # number of bells in the basket currently
+        self.bells = int(0) # number of bells in the basket currently
         self.win = "Game not played."  # wrong string right now, will later be set to winner message
+        self.turn = 1  # manages the turns, odd = player turn, even = computer turn
         self.setup()
 
     def human_turn(self):
         pass
 
     def comp_turn(self):
-        pass
+        five = 5 - (self.bells % 5)
+        take = 0
+        if five == 5 or five == 0:
+            take = int(random.randrange(1, 5))
+        else:
+            take = int(five)
+        self.bells = self.bells - take
 
     def setup(self):
         print("Welcome to the Game of NIM!")
@@ -32,16 +39,16 @@ class NIM:
                       "If there is no optimal number, it will choose a random number.")
                 print("You can either choose how many bells start in the basket...\n"
                       "...or a pseudorandom number from 16-31 inclusive will be selected.")
-                print("THE INSTRUCTIONS HAVE PRINTED.")
+                #print("THE INSTRUCTIONS HAVE PRINTED.")
                 y = True
                 instruction_loop = False
             elif choice == "N":
-                print("THE INSTRUCTIONS WILL NOT BE PRINTED.")
+                #print("THE INSTRUCTIONS WILL NOT BE PRINTED.")
                 instruction_loop = False
             else:
                 print("Sorry, please print 'Y' or 'N'.")
                 instruction_loop = True
-        print("THE WHILE LOOP HAS BEEN EXITED.")
+        #print("THE WHILE LOOP HAS BEEN EXITED.")
         bells_loop = True
         while bells_loop:  # set the number of bells loop
             choice = input("Would you like to set the starting number of bells yourself? Y/N: ")
@@ -64,12 +71,10 @@ class NIM:
               ".\n"
               ".\n"
               "Not that it matters anyway.")
+        self.run()
 
     def win_message(self):
         return self.win
 
-    def run(self, visual): # handles everything related to the actual functioning of the game
-        turn = 1  # manages the turns, odd = player turn, even = computer turn
-        NIM.setup(self)
-        #code for the game goes here
-        print(self.win)
+    def run(self): # handles everything related to the actual functioning of the game
+        pass

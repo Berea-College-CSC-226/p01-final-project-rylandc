@@ -36,10 +36,10 @@ class Visual:
         self.myButton1 = None
         self.myTextBox1 = tk.Entry(self.root)
         self.myTextLabel1 = None
+        self.labeltext = tk.StringVar()
 
         self.game = NIM()
 
-        self.labeltext = str("There are " + str(self.game.bells) + " bells in the basket.")
 
     def wn_setup(self):
         self.create_button1()
@@ -47,11 +47,11 @@ class Visual:
         self.create_label1()
 
     def create_button1(self):
-        self.myButton1 = tk.Button(self. root, text="Take bells", command=self.button1_handler)
+        self.myButton1 = tk.Button(self.root, text="Take bells", command=self.button1_handler)
         self.myButton1.grid(row=0, column=0) # top of the window
 
     def create_textbox1(self):
-        self.myTextBox1.grid(row=0, column=1) # middle of the window
+        self.myTextBox1.grid(row=1, column=0) # middle of the window
 
     def get_entry(self):
         """
@@ -65,16 +65,27 @@ class Visual:
             return text
 
     def create_label1(self):
+        """
+        The label below the textbox is the number of bells; this method sets that up.
+
+        """
+        labeltext = str(self.game.bells)
+        self.labeltext.set(value= labeltext)
         self.myTextLabel1 = tk.Label(self.root, textvariable= self.labeltext)
-        self.myTextLabel1.grid(row=0, column=2) # bottom of the window
+        self.myTextLabel1.grid(row=2, column=0) # bottom of the window
 
     def button1_handler(self):
         """
         Event handler for button1 above.
         Takes the input number of bells (if within acceptable range) and subtracts it from total.
+        Checks first to make sure it is a number from 1-4 inclusive.
 
         """
-        pass
+        text = self.myTextBox1.get()
+        text = int(text)
+        #print(type(text))
+        if 1 <= text <= 4:  # if the number entered is between 1 and 4 inclusive
+            self.game.bells -= text
 
 
 # Section 2: The main() stuff.
@@ -84,9 +95,8 @@ def main():
     Creates an object of the NIM class and calls the method run().
 
     """
-    #game = NIM()  # initialize the game object.
     wn = Visual() # the screen used for the game
     wn.wn_setup()
-    #game.run(wn)  # run the game, passing in the Visual so it can be used.
+    wn.root.mainloop()
 
 main()
