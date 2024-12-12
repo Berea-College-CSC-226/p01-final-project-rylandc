@@ -3,7 +3,7 @@
 # Username: rylandc
 #
 # Purpose:
-#
+# To run the Game of NIM with a (simple) GUI.
 ######################################################################
 # Acknowledgements:
 # I consulted the TA, Nicholas, to figure out how to get the classes to interact the way I need them to.
@@ -15,7 +15,7 @@ import tkinter as tk
 import random
 
 
-# Section 1: The GUI stuff.
+# Section 1: The GUI and game logic stuff.
 
 class Game:
     """
@@ -28,15 +28,15 @@ class Game:
 
         """
         self.root = tk.Tk()
-        self.root.minsize(width=250, height=80)
+        self.root.minsize(width=250, height=80) # the required size to see everything
         self.root.maxsize(width=300, height=300)
         self.root.title("Game of NIM")
 
         self.myButton1 = None
         self.myTextBox1 = tk.Entry(self.root)
         self.myTextLabel1 = None
-        self.labeltext = tk.StringVar()
-        self.win_label = tk.StringVar()
+        self.labeltext = tk.StringVar() # this label will show the number of bells
+        self.win_label = tk.StringVar() # this label will display the win/lose message
 
         self.bells = 0
         self.win = ""
@@ -91,18 +91,30 @@ class Game:
 
 
     def wn_setup(self):
+        """
+        Sets the game and window up.
+
+        """
         self.create_button1()
         self.create_textbox1()
-        self.game_setup()
+        self.game_setup() # the label will be created once self.bells is set to not-zero
 
 
     def create_button1(self):
+        """
+        Creates a button in the top left of the window.
+
+        """
         self.myButton1 = tk.Button(self.root, text="Take bells", command=self.button1_handler)
         self.myButton1.grid(row=0, column=0) # top of the window
 
 
     def create_textbox1(self):
-        self.myTextBox1.grid(row=1, column=0) # middle of the window
+        """
+        Creates a textbox in the middle left of the window.
+
+        """
+        self.myTextBox1.grid(row=1, column=0)
 
 
     def create_label1(self):
@@ -127,31 +139,52 @@ class Game:
         self.win_label.grid(row=2, column=1)  # right of the window
 
 
-    def comp_plays(self, text):
-        five = 5 - (self.bells % 5)
-        if five == 5 or five == 0:
+    def comp_plays(self, test):
+        """
+        Manages the actions of the computer on its turn.
+
+        :param test: only True if the method is being called in the testing method
+        :return: test_c is a testing variable intended for use in the test suite only.
+        """
+        five = 5 - (self.bells % 5) # how many bells to the next multiple of five
+        if five == 5 or five == 0: # if there is a multiple of five in the basket
             take = int(random.randrange(1, 5))
         else:
-            take = int(five)
-        if (self.bells - take) <= 0:
-            take = self.bells
+            take = int(five) # else, take the optimal number
+        if (self.bells - take) < 0: # if take would put the bells into the negative
+            take = self.bells # then just take all the bells and no more
         self.bells -= take
-        self.create_label1()
-        if self.bells <= 1:
-            self.win = "You won!"
-            self.create_win_label()
-
-
-    def human_plays(self, text):
-        if 1 <= text <= 4:  # if the number entered is between 1 and 4 inclusive
-            self.bells -= text
-            if self.bells >= 1:
-                self.create_label1()
-            elif self.bells < 1:
-                self.win = "You lost!"
+        test_c = True
+        if not test: # if this is not a test
+            self.create_label1()
+        if self.bells < 1: # if computer took the last bell
+            self.win = "You won!" # then you won
+            if not test:
                 self.create_win_label()
-        else:
-            print("Whoops! Invalid entry!")
+            test_c = False
+        return test_c
+
+
+    def human_plays(self, text, test):
+        """
+        Manages the game logic that occurs on the player's turn.
+
+        :param text: The number entered into the textbox.
+        :param test: only True if the method is being called in the testing method
+        :return: test_h is a testing variable intended for use in the test suite only.
+        """
+        self.bells -= text
+        test_h = None
+        if self.bells >= 1: # if you did not take the last bell
+            if not test: # if this is not a test
+                self.create_label1() # the game continues
+            test_h = True
+        elif self.bells < 1: # if you took the last bell
+            self.win = "You lost!" # then you lost
+            if not test:
+                self.create_win_label()
+            test_h = False
+        return test_h
 
 
     def button1_handler(self):
@@ -161,13 +194,48 @@ class Game:
         Checks first to make sure it is a number from 1-4 inclusive.
 
         """
-        if self.bells > 0:
+        if self.bells > 0: # if there are any bells in the basket
             text = int(self.myTextBox1.get())
-            self.human_plays(text)
-            if self.bells > 0:
-                self.comp_plays(text)
+            if 1 <= text <= 4:  # if the number entered is between 1 and 4 inclusive
+                self.human_plays(text)
+                if self.bells > 0: # check again so comp_plays() doesn't happen if player already won
+                    self.comp_plays()
+        # button does nothing if game has concluded or an invalid number is input
+
+
+    def test_human_plays(self, bells, text):
+        """
+        Intended for use in the test suite only. Do not run in main program.
+        Tests the human_plays() method.
+        test_h is True if the game would continue, False if it ends.
+
+        :param bells: Number of bells to start
+        :param text: Number of bells to be taken
+        """
+        self.bells = bells
+        test = True
+        test_h = self.human_plays(text, test)
+        if test_h:
+            print("Game continues, " + str(self.bells))
         else:
-            pass
+            print("Game ends, " + str(self.bells))
+
+
+    def test_comp_plays(self, bells):
+        """
+        Intended for use in the test suite only. Do not run in main program.
+        Tests the comp_plays() method.
+        test_c is True if the game would continue, False if it ends.
+
+        :param bells: Number of bells to start
+        """
+        self.bells = bells
+        test = True
+        test_c = self.comp_plays(test)
+        if test_c:
+            print("Game continues, " + str(self.bells))
+        else:
+            print("Game ends, " + str(self.bells))
 
 
 
@@ -182,4 +250,5 @@ def main():
     wn.wn_setup()
     wn.root.mainloop()
 
-main()
+if __name__ == "__main__":
+    main()

@@ -66,7 +66,7 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 Indicate what percentage of the project you have left to complete and how confident you feel. 
 
-️**Completion Percentage**: `80%`
+️**Completion Percentage**: `90%`
 
 ️**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
   strategies you can employ to increase the likelihood that you'll be successful in completing this project 
@@ -81,8 +81,11 @@ Indicate what percentage of the project you have left to complete and how confid
 ## Milestone 4: Final Code, Presentation, Demo
 
 ### ❗User Instructions
-In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
-in PyCharm.
+First, the program will ask you if you need instructions. You do have to enter 'Y' or 'N'. Then, it will ask
+if you want to set the number of bells yourself. The alternative is a generated number. Then, a GUI box will
+pop up. It has a textbox entry, button, and number. The number is the number of bells. Enter how many bells you
+will take into the textbox and press the button. The computer will take its turn, and the number will update.
+Repeat until either you or the computer take the last bell. The one who does loses.
 
 ### ❗Reflection
 In three to four well-written paragraphs, address the following (at a minimum):
@@ -91,3 +94,5 @@ In three to four well-written paragraphs, address the following (at a minimum):
 - What did you learn from this process?
 - What was the hardest part of the final project?
 - What would you do differently next time, knowing what you know now?
+
+I will do this section on a separate document and upload a PDF.
