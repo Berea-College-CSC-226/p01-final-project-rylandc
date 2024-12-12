@@ -87,12 +87,7 @@ class Game:
                 print("Sorry, please print 'Y' or 'N'.")
                 bells_loop = True
         self.create_label1()
-        print("Alright! Time to begin playing.\n"
-              "Are you ready?\n"
-              ".\n"
-              ".\n"
-              ".\n"
-              "Not that it matters anyway.")
+        print("Alright! Time to begin playing.")
 
 
     def wn_setup(self):
@@ -138,6 +133,8 @@ class Game:
             take = int(random.randrange(1, 5))
         else:
             take = int(five)
+        if (self.bells - take) <= 0:
+            take = self.bells
         self.bells -= take
         self.create_label1()
         if self.bells <= 1:
@@ -150,7 +147,6 @@ class Game:
             self.bells -= text
             if self.bells >= 1:
                 self.create_label1()
-                comp_turn = True
             elif self.bells < 1:
                 self.win = "You lost!"
                 self.create_win_label()
@@ -165,12 +161,13 @@ class Game:
         Checks first to make sure it is a number from 1-4 inclusive.
 
         """
-        text = self.myTextBox1.get()
-        text = int(text)
-        comp_turn = False
-        self.human_plays(text)
-        if comp_turn:
-            self.comp_plays(text)
+        if self.bells > 0:
+            text = int(self.myTextBox1.get())
+            self.human_plays(text)
+            if self.bells > 0:
+                self.comp_plays(text)
+        else:
+            pass
 
 
 
@@ -181,7 +178,7 @@ def main():
     Creates an object of the Game class and begins the game.
 
     """
-    wn = Game() #
+    wn = Game()
     wn.wn_setup()
     wn.root.mainloop()
 
