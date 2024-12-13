@@ -34,7 +34,7 @@ helped you, AI tools you've used, and any other resources that are not solely yo
     README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - 
     and REPLACE it with your own:
 
-(https://github.com/Berea-College-CSC-226/p01-final-project-rylandc/blob/rylandc/CSC%20class%20card%20NIM.png "Class NIM CRC Card")
+![CRC Card](https://github.com/Berea-College-CSC-226/p01-final-project-rylandc/blob/rylandc/CSC%20class%20card%20NIM.png "Class NIM CRC Card")
 
 ️**Branches**: This project will **require** effective use of git.
 
