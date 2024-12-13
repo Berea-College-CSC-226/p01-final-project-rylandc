@@ -7,7 +7,7 @@
 ######################################################################
 # Acknowledgements:
 # I consulted the TA, Nicholas, to figure out how to get the classes to interact the way I need them to.
-#
+# I also later changed how this happened, so that advice no longer applies.
 #
 #
 ######################################################################
@@ -62,7 +62,7 @@ class Game:
                       "The computer will always take the optimal number.\n"
                       "If there is no optimal number, it will choose a random number.")
                 print("You can either choose how many bells start in the basket...\n"
-                      "...or a pseudorandom number from 16-31 inclusive will be selected.")
+                      "...or a pseudorandom number from 16-270 inclusive will be selected.")
                 y = True
                 instruction_loop = False
             elif choice == "N":
@@ -79,8 +79,8 @@ class Game:
                 bells_loop = False
             elif choice == "N":
                 if not y:
-                    print("A pseudorandom number will be generated from 16-31.")
-                self.bells = int(random.randrange(16, 32))
+                    print("A pseudorandom number will be generated from 16-270.")
+                self.bells = int(random.randrange(16, 271))
                 print("There are " + str(self.bells) + " bells in the basket.")
                 bells_loop = False
             else:
@@ -136,7 +136,7 @@ class Game:
         win_text = str(self.win)
         self.win_label.set(value= win_text)
         self.win_label = tk.Label(self.root, textvariable=self.win_label)
-        self.win_label.grid(row=2, column=1)  # right of the window
+        self.win_label.grid(row=1, column=1)  # right of the window
 
 
     def comp_plays(self, test):
@@ -146,9 +146,11 @@ class Game:
         :param test: only True if the method is being called in the testing method
         :return: test_c is a testing variable intended for use in the test suite only.
         """
-        five = 5 - (self.bells % 5) # how many bells to the next multiple of five
+        five = (self.bells % 5) # how many bells to the next multiple of five
         if five == 5 or five == 0: # if there is a multiple of five in the basket
             take = int(random.randrange(1, 5))
+        elif (self.bells - five) == 0:
+            take = five - 1
         else:
             take = int(five) # else, take the optimal number
         if (self.bells - take) < 0: # if take would put the bells into the negative
@@ -197,9 +199,9 @@ class Game:
         if self.bells > 0: # if there are any bells in the basket
             text = int(self.myTextBox1.get())
             if 1 <= text <= 4:  # if the number entered is between 1 and 4 inclusive
-                self.human_plays(text)
+                self.human_plays(text, False)
                 if self.bells > 0: # check again so comp_plays() doesn't happen if player already won
-                    self.comp_plays()
+                    self.comp_plays(False)
         # button does nothing if game has concluded or an invalid number is input
 
 
