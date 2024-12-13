@@ -1,9 +1,9 @@
-# ❗CSC226 Final Project
+# CSC226 Final Project
 
 ## Instructions
 
-❗️Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which 
-  they accompany. (This means that your final README should have no ❗️in it!)
+Exclamation Marks  ️indicate action items; you should remove these emoji as you complete/update the items which 
+  they accompany. (This means that your final README should have no in it!)
 
 **Author(s)**: Charle Ryland
 
@@ -34,7 +34,7 @@ helped you, AI tools you've used, and any other resources that are not solely yo
     README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - 
     and REPLACE it with your own:
 
-https://github.com/Berea-College-CSC-226/p01-final-project-rylandc/blob/rylandc/CSC%20class%20card%20NIM.png
+(https://github.com/Berea-College-CSC-226/p01-final-project-rylandc/blob/rylandc/CSC%20class%20card%20NIM.png "Class NIM CRC Card")
 
 ️**Branches**: This project will **require** effective use of git.
 
@@ -56,8 +56,8 @@ Reflect on what you’ve done so far. How’s it going? Are you feeling behind/a
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    **I do feel behind (because I am), but I feel like I'm behind because I don't know how to solve an issue.
-    I think once I figure out the connection piece, it'll be easier for me to keep up.**
+    I do feel behind (because I am), but I feel like I'm behind because I don't know how to solve an issue.
+    I think once I figure out the connection piece, it'll be easier for me to keep up.
 ```
 
 ---
@@ -73,21 +73,21 @@ Indicate what percentage of the project you have left to complete and how confid
   before the deadline.
 
 ```
-    **I am confident I can complete this project.**
+    I am confident I can complete this project.
 ```
 
 ---
 
 ## Milestone 4: Final Code, Presentation, Demo
 
-### ❗User Instructions
+### User Instructions
 First, the program will ask you if you need instructions. You do have to enter 'Y' or 'N'. Then, it will ask
 if you want to set the number of bells yourself. The alternative is a generated number. Then, a GUI box will
 pop up. It has a textbox entry, button, and number. The number is the number of bells. Enter how many bells you
 will take into the textbox and press the button. The computer will take its turn, and the number will update.
 Repeat until either you or the computer take the last bell. The one who does loses.
 
-### ❗Reflection
+### Reflection
 In three to four well-written paragraphs, address the following (at a minimum):
 - Why did you select the project that you did?
 - How closely did your final project reflect your initial design?
@@ -95,4 +95,4 @@ In three to four well-written paragraphs, address the following (at a minimum):
 - What was the hardest part of the final project?
 - What would you do differently next time, knowing what you know now?
 
-I will do this section on a separate document and upload a PDF.
+I will do this section on a separate document and upload a PDF to GitHub.

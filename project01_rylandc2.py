@@ -149,6 +149,8 @@ class Game:
         five = (self.bells % 5) # how many bells to the next multiple of five
         if five == 5 or five == 0: # if there is a multiple of five in the basket
             take = int(random.randrange(1, 5))
+        elif five == 1:
+            take = 1
         elif (self.bells - five) == 0:
             take = five - 1
         else:

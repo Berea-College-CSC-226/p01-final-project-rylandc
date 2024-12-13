@@ -17,7 +17,7 @@ print("This test should be be 'Game ends':")
 test_game.test_comp_plays(1)
 # should continue if computer can force player to take last bell (4 tests)
 print("These tests should be 'Game continues':")
-test_game.test_comp_plays(2) # this test fails. All others pass. Error is found and accounted for.
+test_game.test_comp_plays(2)
 test_game.test_comp_plays(3)
 test_game.test_comp_plays(4)
 test_game.test_comp_plays(5)
