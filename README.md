@@ -16,7 +16,7 @@ Throughout this project, you have likely used outside resources. Reference all i
 and describe how you integrated the ideas or code into your program. This includes online sources, people who have 
 helped you, AI tools you've used, and any other resources that are not solely your own contribution. Update as you go.
 
-'I asked Nicholas for help once and the solution worked fine for a while, but I ended up doing something else.'
+`I asked Nicholas for help once and the solution worked fine for a while, but I ended up doing something else.`
 
 ---
 
